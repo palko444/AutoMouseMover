@@ -11,21 +11,21 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		PointerInfo a = MouseInfo.getPointerInfo();
 		while (true) {
 
+			PointerInfo a = MouseInfo.getPointerInfo();
 			Point b = a.getLocation();
 
 			try {
-				Thread.sleep(60000);
-			}
-			catch (InterruptedException e) {
+				Thread.sleep(30000);
+			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			Point c = a.getLocation();
-			
-			if (! b.equals(c)) {
+			PointerInfo d = MouseInfo.getPointerInfo();
+			Point c = d.getLocation();
+
+			if (b.equals(c)) {
 				moveMouse(c);
 			}
 
@@ -40,9 +40,9 @@ public class Main {
 			Double gy = c.getY();
 			Integer x = gx.intValue();
 			Integer y = gy.intValue();
-			rm.mouseMove(x+1,y);
-		}
-		catch (AWTException e) {
+			rm.mouseMove(x + 1, y);
+			rm.mouseMove(x, y);
+		} catch (AWTException e) {
 		}
 	}
 }
